@@ -1,0 +1,14 @@
+{
+  "name": "master-gallery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dependency-free static image gallery",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "node --check script.js && node --check gallery-utils.js && node --check tests/gallery-utils.test.js && node --check tests/markup.test.js && node --check scripts/verify-build.js",
+    "test": "node --test",
+    "build": "node scripts/verify-build.js"
+  }
+}

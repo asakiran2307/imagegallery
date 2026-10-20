@@ -1,0 +1,31 @@
+name: Gallery CI
+
+on:
+  push:
+    branches:
+      - main
+      - "daily/**"
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Lint, tests and static build check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Lint JavaScript syntax
+        run: npm run lint
+      - name: Run automated tests
+        run: npm test
+      - name: Verify static build configuration
+        run: npm run build
