@@ -108,10 +108,9 @@ function initFavoriteControls() {
             event.stopPropagation();
             toggleFavorite(record);
         });
-        card.appendChild(favoriteButton);
+        record.element.appendChild(favoriteButton);
 
-        card.addEventListener('click', function (event) {
-            if (event.target.closest('.favorite-toggle')) return;
+        card.addEventListener('click', function () {
             openLightbox(record.element);
         });
         card.addEventListener('keydown', function (event) {

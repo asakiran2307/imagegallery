@@ -1026,3 +1026,7 @@ button {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* Keep the favorite control positioned on the card without nesting interactive controls. */
+.gallery-item { position: relative; }
